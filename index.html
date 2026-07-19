@@ -10,7 +10,7 @@
 
     <meta
         name="description"
-        content="Yes, I Can! English Classes. Clases de inglés para niños y apoyo académico para estudiantes de escuelas y colegios en Puyo, Pastaza."
+        content="Yes, I Can! English Classes. Clases de inglés para niños y estudiantes en Puyo, Pastaza."
     >
 
     <meta name="theme-color" content="#002868">
@@ -76,7 +76,7 @@
             text-decoration: none;
         }
 
-        .logo {
+        .logo-menu {
             display: block;
             width: 115px;
             height: 90px;
@@ -93,7 +93,6 @@
         nav a {
             position: relative;
             color: var(--blanco);
-            font-size: 0.95rem;
             font-weight: bold;
             text-decoration: none;
         }
@@ -131,7 +130,7 @@
             background:
                 radial-gradient(
                     circle at 85% 20%,
-                    rgba(191, 10, 48, 0.28),
+                    rgba(191, 10, 48, 0.3),
                     transparent 35%
                 ),
                 linear-gradient(
@@ -146,10 +145,10 @@
             min-height: 610px;
             margin: auto;
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1.1fr 0.9fr;
             align-items: center;
-            gap: 60px;
-            padding: 70px 0;
+            gap: 50px;
+            padding: 65px 0;
         }
 
         .ubicacion {
@@ -160,7 +159,6 @@
         }
 
         .portada h1 {
-            max-width: 720px;
             margin-bottom: 22px;
             font-size: clamp(2.8rem, 7vw, 5.5rem);
             line-height: 0.95;
@@ -197,8 +195,8 @@
             cursor: pointer;
             transition:
                 transform 0.2s,
-                box-shadow 0.2s,
-                background 0.2s;
+                background 0.2s,
+                box-shadow 0.2s;
         }
 
         .boton:hover,
@@ -219,22 +217,32 @@
             background: var(--blanco);
         }
 
+        /*
+         * El contenedor del logo es transparente.
+         * No tiene fondo blanco, borde ni tarjeta.
+         */
         .logo-portada {
             position: relative;
-            padding: 28px;
-            background: var(--blanco);
-            border-top: 12px solid var(--rojo);
-            border-radius: 24px;
-            box-shadow: var(--sombra);
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .logo-portada img {
             display: block;
             width: 100%;
-            max-width: 430px;
+            max-width: 520px;
             margin: auto;
             object-fit: contain;
+            filter:
+                drop-shadow(
+                    0 18px 22px rgba(0, 0, 0, 0.3)
+                );
         }
 
         section {
@@ -345,9 +353,9 @@
         .servicio-infantil::before {
             content: "ABC";
             position: absolute;
-            top: 10px;
-            right: 25px;
-            color: rgba(0, 40, 104, 0.07);
+            top: 5px;
+            right: 20px;
+            color: rgba(0, 40, 104, 0.06);
             font-size: 7rem;
             font-weight: 900;
         }
@@ -604,6 +612,10 @@
                 grid-column: auto;
                 grid-template-columns: 1fr;
             }
+
+            .logo-portada img {
+                max-width: 450px;
+            }
         }
 
         @media (max-width: 650px) {
@@ -611,7 +623,7 @@
                 min-height: 85px;
             }
 
-            .logo {
+            .logo-menu {
                 width: 85px;
                 height: 70px;
             }
@@ -645,6 +657,10 @@
             .portada h1 {
                 font-size: 3rem;
             }
+
+            .logo-portada img {
+                max-width: 350px;
+            }
         }
     </style>
 </head>
@@ -658,8 +674,8 @@
                 aria-label="Ir al inicio"
             >
                 <img
-                    class="logo"
-                    src="logo-mejorado.png"
+                    class="logo-menu"
+                    src="./logo-mejorado.png"
                     alt="Logo de Yes, I Can! English Classes"
                 >
             </a>
@@ -722,7 +738,7 @@
 
                 <div class="logo-portada">
                     <img
-                        src="logo-mejorado.png"
+                        src="./logo-mejorado.png"
                         alt="Yes, I Can! English Classes"
                     >
                 </div>
@@ -791,8 +807,8 @@
                     <h2>Nuestros servicios</h2>
 
                     <p>
-                        Programas adaptados a la edad, las necesidades
-                        y el nivel académico de cada estudiante.
+                        Programas adaptados a la edad, necesidades y
+                        nivel académico de cada estudiante.
                     </p>
                 </div>
 
@@ -850,8 +866,7 @@
                         <p>
                             Realizamos repasos, ejercicios y prácticas
                             enfocadas en los contenidos que el
-                            estudiante necesita dominar para sus
-                            pruebas y evaluaciones.
+                            estudiante necesita dominar.
                         </p>
                     </article>
 
@@ -897,20 +912,12 @@
                                 entretenida y significativa.
                             </p>
 
-                            <p>
-                                Las actividades contribuyen al
-                                desarrollo de la motricidad fina y
-                                gruesa, la coordinación, la memoria,
-                                la concentración y la seguridad para
-                                expresarse.
-                            </p>
-
                             <ul class="beneficios-infantiles">
                                 <li>Canciones y juegos en inglés</li>
                                 <li>Vocabulario mediante imágenes</li>
                                 <li>Actividades de motricidad</li>
                                 <li>Expresiones conversacionales</li>
-                                <li>Cuentos y actividades creativas</li>
+                                <li>Cuentos y creatividad</li>
                                 <li>Aprendizaje sin presión</li>
                             </ul>
 
@@ -919,8 +926,7 @@
                                 un primer contacto positivo con el
                                 inglés, desarrolle curiosidad por
                                 aprender y comience a comunicarse
-                                mediante palabras, canciones e
-                                instrucciones sencillas.
+                                mientras juega y explora.
                             </p>
 
                             <a class="boton" href="#inscripcion">
@@ -958,8 +964,7 @@
                             es una academia ubicada en Puyo, provincia
                             de Pastaza. Ofrecemos clases interactivas
                             para niños pequeños y acompañamiento
-                            académico para estudiantes de escuelas
-                            y colegios.
+                            académico para estudiantes.
                         </p>
 
                         <p>
@@ -976,8 +981,6 @@
                             queremos dejar en cada estudiante:
                             <strong>“Yes, I Can!”</strong>, que
                             significa <strong>“¡Sí, yo puedo!”</strong>.
-                            Esta frase refleja la confianza que queremos
-                            desarrollar en cada alumno.
                         </p>
                     </article>
 
@@ -1000,11 +1003,10 @@
                         </p>
 
                         <p>
-                            No queremos que los estudiantes solamente
-                            memoricen respuestas. Nuestro objetivo es
-                            que comprendan el contenido, aprendan a
-                            resolver los ejercicios y desarrollen la
-                            confianza necesaria para utilizar el inglés.
+                            No buscamos que los estudiantes solamente
+                            memoricen respuestas. Queremos que
+                            comprendan el contenido y desarrollen
+                            confianza para utilizar el inglés.
                         </p>
                     </article>
                 </div>
@@ -1014,11 +1016,9 @@
                         <h3>Nuestra misión</h3>
 
                         <p>
-                            Brindar clases de inglés dinámicas,
-                            responsables y personalizadas que
-                            contribuyan al desarrollo educativo,
-                            comunicativo y personal de niños y
-                            estudiantes.
+                            Brindar clases dinámicas, responsables y
+                            personalizadas que contribuyan al desarrollo
+                            educativo, comunicativo y personal.
                         </p>
                     </div>
 
@@ -1026,10 +1026,9 @@
                         <h3>Nuestra visión</h3>
 
                         <p>
-                            Ser una academia reconocida en Puyo por su
-                            compromiso con la educación, su trato
-                            humano, su metodología interactiva y los
-                            resultados de sus estudiantes.
+                            Ser una academia reconocida en Puyo por
+                            su compromiso, trato humano, metodología
+                            interactiva y resultados.
                         </p>
                     </div>
                 </div>
@@ -1046,8 +1045,8 @@
                     <h2>Solicita información</h2>
 
                     <p>
-                        Completa el formulario. Al enviarlo se abrirá
-                        WhatsApp con la solicitud preparada.
+                        Completa el formulario y envíalo directamente
+                        por WhatsApp.
                     </p>
                 </div>
 
@@ -1168,7 +1167,7 @@
 
                             <textarea
                                 id="mensaje"
-                                placeholder="Escribe aquí la información que consideres importante."
+                                placeholder="Escribe aquí la información importante."
                             ></textarea>
                         </div>
                     </div>
@@ -1222,11 +1221,6 @@
                         de escuelas y colegios.
                     </p>
 
-                    <p>
-                        Comunícate con nosotros para conocer horarios,
-                        disponibilidad y opciones de estudio.
-                    </p>
-
                     <a
                         class="boton"
                         href="https://wa.me/593987308319?text=Hola%2C%20Yesenia.%20Deseo%20recibir%20informaci%C3%B3n%20sobre%20las%20clases%20de%20ingl%C3%A9s."
@@ -1248,12 +1242,18 @@
     </footer>
 
     <script>
-        const menuBoton = document.getElementById("menuBoton");
-        const menu = document.getElementById("menu");
-        const formulario = document.getElementById("formulario");
+        const menuBoton =
+            document.getElementById("menuBoton");
+
+        const menu =
+            document.getElementById("menu");
+
+        const formulario =
+            document.getElementById("formulario");
 
         menuBoton.addEventListener("click", function () {
-            const abierto = menu.classList.toggle("activo");
+            const abierto =
+                menu.classList.toggle("activo");
 
             menuBoton.setAttribute(
                 "aria-expanded",
@@ -1261,79 +1261,114 @@
             );
         });
 
-        document.querySelectorAll("nav a").forEach(function (enlace) {
-            enlace.addEventListener("click", function () {
-                menu.classList.remove("activo");
-                menuBoton.setAttribute("aria-expanded", "false");
+        document
+            .querySelectorAll("nav a")
+            .forEach(function (enlace) {
+                enlace.addEventListener(
+                    "click",
+                    function () {
+                        menu.classList.remove("activo");
+
+                        menuBoton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+                );
             });
-        });
 
-        formulario.addEventListener("submit", function (evento) {
-            evento.preventDefault();
+        formulario.addEventListener(
+            "submit",
+            function (evento) {
+                evento.preventDefault();
 
-            if (!formulario.checkValidity()) {
-                formulario.reportValidity();
-                return;
+                if (!formulario.checkValidity()) {
+                    formulario.reportValidity();
+                    return;
+                }
+
+                const nombre =
+                    document
+                        .getElementById("nombre")
+                        .value
+                        .trim();
+
+                const edad =
+                    document
+                        .getElementById("edad")
+                        .value
+                        .trim();
+
+                const institucion =
+                    document
+                        .getElementById("institucion")
+                        .value
+                        .trim()
+                    || "No aplica o no especificada";
+
+                const curso =
+                    document
+                        .getElementById("curso")
+                        .value
+                        .trim()
+                    || "No aplica o no especificado";
+
+                const representante =
+                    document
+                        .getElementById("representante")
+                        .value
+                        .trim();
+
+                const telefono =
+                    document
+                        .getElementById("telefono")
+                        .value
+                        .trim();
+
+                const servicio =
+                    document
+                        .getElementById("servicio")
+                        .value;
+
+                const mensajeAdicional =
+                    document
+                        .getElementById("mensaje")
+                        .value
+                        .trim()
+                    || "No especificado";
+
+                const mensajeWhatsApp =
+                    "Hola, Yesenia. Deseo solicitar información "
+                    + "sobre las clases de inglés."
+                    + "\n\nNombre del estudiante: " + nombre
+                    + "\nEdad: " + edad
+                    + "\nEscuela o colegio: " + institucion
+                    + "\nCurso o grado: " + curso
+                    + "\nRepresentante: " + representante
+                    + "\nTeléfono: " + telefono
+                    + "\nServicio solicitado: " + servicio
+                    + "\nMensaje: " + mensajeAdicional
+                    + "\n\nSolicitud enviada desde la página "
+                    + "Yes, I Can! English Classes.";
+
+                const numeroWhatsApp =
+                    "593987308319";
+
+                const direccion =
+                    "https://wa.me/"
+                    + numeroWhatsApp
+                    + "?text="
+                    + encodeURIComponent(mensajeWhatsApp);
+
+                window.open(
+                    direccion,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+                formulario.reset();
             }
-
-            const nombre =
-                document.getElementById("nombre").value.trim();
-
-            const edad =
-                document.getElementById("edad").value.trim();
-
-            const institucion =
-                document.getElementById("institucion").value.trim()
-                || "No aplica o no especificada";
-
-            const curso =
-                document.getElementById("curso").value.trim()
-                || "No aplica o no especificado";
-
-            const representante =
-                document.getElementById("representante").value.trim();
-
-            const telefono =
-                document.getElementById("telefono").value.trim();
-
-            const servicio =
-                document.getElementById("servicio").value;
-
-            const mensajeAdicional =
-                document.getElementById("mensaje").value.trim()
-                || "No especificado";
-
-            const mensajeWhatsApp =
-                "Hola, Yesenia. Deseo solicitar información "
-                + "sobre las clases de inglés."
-                + "\n\nNombre del estudiante: " + nombre
-                + "\nEdad: " + edad
-                + "\nEscuela o colegio: " + institucion
-                + "\nCurso o grado: " + curso
-                + "\nRepresentante: " + representante
-                + "\nTeléfono: " + telefono
-                + "\nServicio solicitado: " + servicio
-                + "\nMensaje o tema que necesita reforzar: "
-                + mensajeAdicional
-                + "\n\nSolicitud enviada desde la página de "
-                + "Yes, I Can! English Classes.";
-
-            const numeroWhatsApp = "593987308319";
-
-            const direccion =
-                "https://wa.me/"
-                + numeroWhatsApp
-                + "?text="
-                + encodeURIComponent(mensajeWhatsApp);
-
-            window.open(
-                direccion,
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-            formulario.reset();
-        });
+        );
     </script>
 </body>
 </html>
