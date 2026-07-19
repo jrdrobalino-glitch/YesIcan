@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Yes, I Can! English Classes. Refuerzo de inglés para estudiantes de escuelas y colegios en Puyo, Pastaza."
+    >
+
+    <title>Yes, I Can! English Classes</title>
+
+    <style>
+        :root {
+            --azul: #002868;
+            --rojo: #bf0a30;
+            --blanco: #ffffff;
+            --celeste: #e8f2ff;
+            --gris: #323c4b;
+            --gris-claro: #f5f7fa;
+            --sombra: 0 12px 30px rgba(0, 40, 104, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--gris);
+            background: var(--blanco);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--azul);
+            border-bottom: 5px solid var(--rojo);
+        }
+
+        .navegacion {
+            width: min(1150px, 92%);
+            min-height: 90px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            color: var(--blanco);
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .logo span {
+            display: block;
+            margin-top: 8px;
+            color: var(--rojo);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--blanco);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #ffbac8;
+        }
+
+        .menu-boton {
+            display: none;
+            padding: 9px 13px;
+            color: var(--blanco);
+            background: transparent;
+            border: 2px solid var(--blanco);
+            border-radius: 8px;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .portada {
+            color: var(--blanco);
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(0, 40, 104, 0.98),
+                    rgba(0, 40, 104, 0.88)
+                );
+        }
+
+        .portada-contenido {
+            width: min(1150px, 92%);
+            min-height: 580px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 60px;
+            padding: 70px 0;
+        }
+
+        .ubicacion {
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .portada h1 {
+            max-width: 720px;
+            margin-bottom: 22px;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 0.95;
+        }
+
+        .portada h1 span {
+            color: var(--rojo);
+        }
+
+        .portada p {
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 14px 25px;
+            color: var(--blanco);
+            background: var(--rojo);
+            border: 0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .boton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .tarjeta-portada {
+            padding: 45px 30px;
+            color: var(--azul);
+            background: var(--blanco);
+            border-top: 12px solid var(--rojo);
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            text-align: center;
+        }
+
+        .tarjeta-portada .abc {
+            font-size: clamp(4rem, 9vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .tarjeta-portada h2 {
+            margin: 20px 0 8px;
+            color: var(--rojo);
+        }
+
+        section {
+            padding: 85px 0;
+        }
+
+        .contenedor {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+        .encabezado-seccion {
+            max-width: 780px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .encabezado-seccion h2 {
+            margin-bottom: 13px;
+            color: var(--azul);
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+
+        .encabezado-seccion p {
+            font-size: 1.1rem;
+        }
+
+        .cuadricula {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            padding: 30px;
+            background: var(--celeste);
+            border-bottom: 5px solid var(--rojo);
+            border-radius: 14px;
+            box-shadow: var(--sombra);
+        }
+
+        .tarjeta h3 {
+            margin-bottom: 14px;
+            color: var(--rojo);
+            font-size: 1.3rem;
+        }
+
+        #servicios {
+            background: var(--gris-claro);
+        }
+
+        .servicios {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .categoria {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--rojo);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .servicios .tarjeta h3 {
+            color: var(--azul);
+            font-size: 1.4rem;
+        }
+
+        .nosotros {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .nosotros article {
+            padding: 35px;
+            border-radius: 14px;
+        }
+
+        .nosotros article:first-child {
+            background: var(--celeste);
+        }
+
+        .nosotros article:last-child {
+            color: var(--blanco);
+            background: var(--azul);
+        }
+
+        .nosotros h3 {
+            margin-bottom: 18px;
+            color: var(--rojo);
+            font-size: 1.8rem;
+        }
+
+        .nosotros p {
+            margin-bottom: 18px;
+        }
+
+        .mision-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .mision-vision div {
+            padding: 25px;
+            background: var(--blanco);
+            border: 2px solid var(--celeste);
+            border-radius: 12px;
+        }
+
+        .mision-vision h3 {
+            margin-bottom: 10px;
+            color: var(--azul);
+        }
+
+        #inscripcion {
+            background: var(--celeste);
+        }
+
+        form {
+            max-width: 850px;
+            margin: auto;
+            padding: 40px;
+            background: var(--blanco);
+            border-radius: 16px;
+            box-shadow: var(--sombra);
+        }
+
+        .campos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .campo-completo {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            color: var(--gris);
+            background: var(--blanco);
+            border: 2px solid #ccd8e8;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid rgba(191, 10, 48, 0.18);
+            border-color: var(--rojo);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        form .boton {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        .nota {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        #contacto {
+            color: var(--blanco);
+            background: var(--azul);
+        }
+
+        .contacto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .contacto h2 {
+            margin-bottom: 20px;
+            font-size: 2.4rem;
+        }
+
+        .contacto p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contacto strong {
+            color: #ffbac8;
+        }
+
+        footer {
+            padding: 25px;
+            color: var(--blanco);
+            background: #001a45;
+            text-align: center;
+        }
+
+        @media (max-width: 850px) {
+            .menu-boton {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                background: var(--azul);
+                border-bottom: 5px solid var(--rojo);
+            }
+
+            nav.activo {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .portada-contenido,
+            .nosotros,
+            .contacto {
+                grid-template-columns: 1fr;
+            }
+
+            .cuadricula,
+            .servicios {
+                grid-template-columns: 1fr;
+            }
+
+            .portada-contenido {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo span {
+                font-size: 0.7rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .campos,
+            .mision-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .campo-completo {
+                grid-column: auto;
+            }
+
+            form {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navegacion">
+            <a class="logo" href="#inicio">
+                YES, I CAN!
+                <span>ENGLISH CLASSES</span>
+            </a>
+
+            <button
+                class="menu-boton"
+                id="menuBoton"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Quiénes somos</a></li>
+                    <li><a href="#inscripcion">Inscripciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <div>
+                    <p class="ubicacion">
+                        PUYO • PASTAZA • ECUADOR
+                    </p>
+
+                    <h1>
+                        Aprender inglés
+                        <span>sí es posible.</span>
+                    </h1>
+
+                    <p>
+                        Clases dedicadas especialmente a estudiantes de
+                        escuelas y colegios. Brindamos ayuda con tareas,
+                        refuerzo académico y preparación para exámenes
+                        de inglés.
+                    </p>
+
+                    <a class="boton" href="#inscripcion">
+                        Solicitar información
+                    </a>
+                </div>
+
+                <div class="tarjeta-portada">
+                    <div class="abc">ABC</div>
+
+                    <h2>Aprende • Practica • Avanza</h2>
+
+                    <p>
+                        Fortalece tus conocimientos, mejora tus
+                        calificaciones y aprende con confianza.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2>
+                        ¿Cómo ayudamos a nuestros estudiantes?
+                    </h2>
+
+                    <p>
+                        Ofrecemos acompañamiento personalizado para
+                        superar dificultades y alcanzar mejores
+                        resultados académicos.
+                    </p>
+                </div>
+
+                <div class="cuadricula">
+                    <article class="tarjeta">
+                        <h3>Ayuda con tareas</h3>
+
+                        <p>
+                            Orientamos al estudiante para que comprenda
+                            sus tareas de inglés y pueda realizarlas
+                            correctamente.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Preparación para exámenes</h3>
+
+                        <p>
+                            Repasamos vocabulario, gramática, lectura y
+                            los temas necesarios para mejorar el
+                            rendimiento académico.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Refuerzo escolar</h3>
+
+                        <p>
+                            Fortalecemos los temas que presentan
+                            dificultad y ayudamos al estudiante a
+                            recuperar su confianza.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2>Nuestros servicios</h2>
+
+                    <p>
+                        Apoyo académico para estudiantes de escuelas
+                        y colegios de Puyo.
+                    </p>
+                </div>
+
+                <div class="cuadricula servicios">
+                    <article class="tarjeta">
+                        <span class="categoria">ESCUELA</span>
+
+                        <h3>
+                            Inglés para estudiantes de escuela
+                        </h3>
+
+                        <p>
+                            Clases adaptadas a la edad y al nivel del
+                            estudiante. Trabajamos vocabulario,
+                            pronunciación, lectura, escritura y
+                            comprensión.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <span class="categoria">COLEGIO</span>
+
+                        <h3>
+                            Inglés para estudiantes de colegio
+                        </h3>
+
+                        <p>
+                            Refuerzo de gramática, comprensión lectora,
+                            escritura, pronunciación y los temas
+                            estudiados dentro de la institución.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <span class="categoria">
+                            APOYO ACADÉMICO
+                        </span>
+
+                        <h3>
+                            Ayuda y orientación con tareas
+                        </h3>
+
+                        <p>
+                            Explicamos cada actividad paso a paso para
+                            que el estudiante no solamente complete la
+                            tarea, sino que comprenda el tema.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <span class="categoria">PREPARACIÓN</span>
+
+                        <h3>Preparación para exámenes</h3>
+
+                        <p>
+                            Realizamos repasos, ejercicios y prácticas
+                            enfocadas en los contenidos que el
+                            estudiante necesita dominar.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2>Quiénes somos</h2>
+
+                    <p>
+                        Conoce nuestro compromiso con los estudiantes
+                        de Puyo.
+                    </p>
+                </div>
+
+                <div class="nosotros">
+                    <article>
+                        <h3>Nuestra academia</h3>
+
+                        <p>
+                            <strong>
+                                Yes, I Can! English Classes
+                            </strong>
+                            es una academia ubicada en Puyo, provincia
+                            de Pastaza. Está dedicada principalmente
+                            al acompañamiento académico de estudiantes
+                            de escuelas y colegios.
+                        </p>
+
+                        <p>
+                            La academia está dirigida por
+                            <strong>Yesenia Meza</strong>, quien cree
+                            que todos los estudiantes pueden mejorar
+                            cuando reciben explicaciones claras,
+                            atención personalizada, paciencia y
+                            motivación.
+                        </p>
+
+                        <p>
+                            Nuestro nombre representa el mensaje que
+                            queremos dejar en cada estudiante:
+                            <strong>“Yes, I Can!”</strong>, que
+                            significa <strong>“¡Sí, yo puedo!”</strong>.
+                            Queremos que los alumnos desarrollen la
+                            confianza necesaria para superar sus
+                            dificultades y alcanzar sus metas.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Nuestro propósito</h3>
+
+                        <p>
+                            Nuestro propósito es ayudar a los
+                            estudiantes de escuelas y colegios a
+                            comprender mejor el inglés, cumplir
+                            correctamente con sus tareas, prepararse
+                            para sus exámenes y mejorar su rendimiento
+                            académico.
+                        </p>
+
+                        <p>
+                            Ofrecemos un espacio tranquilo donde los
+                            estudiantes pueden hacer preguntas,
+                            practicar sin miedo a equivocarse y
+                            aprender a su propio ritmo.
+                        </p>
+
+                        <p>
+                            No buscamos que el estudiante solamente
+                            memorice respuestas. Nuestro objetivo es
+                            que comprenda el contenido, aprenda a
+                            resolver los ejercicios por sí mismo y
+                            desarrolle habilidades que pueda utilizar
+                            durante todo su proceso educativo.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="mision-vision">
+                    <div>
+                        <h3>Nuestra misión</h3>
+
+                        <p>
+                            Brindar apoyo académico de calidad mediante
+                            clases claras, dinámicas y personalizadas
+                            que fortalezcan los conocimientos y la
+                            confianza de cada estudiante.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Nuestra visión</h3>
+
+                        <p>
+                            Ser una academia reconocida en Puyo por su
+                            compromiso con la educación, su trato
+                            humano y los resultados de sus estudiantes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inscripcion">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2>Solicitud de información</h2>
+
+                    <p>
+                        Completa el formulario. Al enviarlo se abrirá
+                        WhatsApp con la solicitud preparada.
+                    </p>
+                </div>
+
+                <form id="formulario">
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="nombre">
+                                Nombre del estudiante
+                            </label>
+
+                            <input
+                                id="nombre"
+                                name="nombre"
+                                type="text"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="edad">Edad</label>
+
+                            <input
+                                id="edad"
+                                name="edad"
+                                type="number"
+                                min="5"
+                                max="25"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="institucion">
+                                Escuela o colegio
+                            </label>
+
+                            <input
+                                id="institucion"
+                                name="institucion"
+                                type="text"
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="curso">
+                                Curso o grado
+                            </label>
+
+                            <input
+                                id="curso"
+                                name="curso"
+                                type="text"
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="representante">
+                                Nombre del representante
+                            </label>
+
+                            <input
+                                id="representante"
+                                name="representante"
+                                type="text"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefono">
+                                Teléfono o WhatsApp
+                            </label>
+
+                            <input
+                                id="telefono"
+                                name="telefono"
+                                type="tel"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo campo-completo">
+                            <label for="servicio">
+                                Servicio de interés
+                            </label>
+
+                            <select
+                                id="servicio"
+                                name="servicio"
+                                required
+                            >
+                                <option value="">
+                                    Seleccione un servicio
+                                </option>
+
+                                <option>
+                                    Clases para estudiantes de escuela
+                                </option>
+
+                                <option>
+                                    Clases para estudiantes de colegio
+                                </option>
+
+                                <option>
+                                    Ayuda con tareas
+                                </option>
+
+                                <option>
+                                    Preparación para exámenes
+                                </option>
+
+                                <option>
+                                    Refuerzo de inglés
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-completo">
+                            <label for="dificultad">
+                                Tema o dificultad que necesita reforzar
+                            </label>
+
+                            <textarea
+                                id="dificultad"
+                                name="dificultad"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <button class="boton" type="submit">
+                        Enviar solicitud por WhatsApp
+                    </button>
+
+                    <p class="nota">
+                        WhatsApp abrirá el mensaje preparado. Para
+                        completar la solicitud debes presionar Enviar.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="contenedor contacto">
+                <div>
+                    <h2>Contáctanos</h2>
+
+                    <p>
+                        <strong>Propietaria:</strong>
+                        Yesenia Meza
+                    </p>
+
+                    <p>
+                        <strong>Teléfono y WhatsApp:</strong>
+                        0987308319
+                    </p>
+
+                    <p>
+                        <strong>Dirección:</strong>
+                        27 de Febrero y Bolívar
+                    </p>
+
+                    <p>
+                        <strong>Ciudad:</strong>
+                        Puyo, Pastaza, Ecuador
+                    </p>
+                </div>
+
+                <div>
+                    <h2>
+                        Apoyo académico para alcanzar mejores resultados
+                    </h2>
+
+                    <p>
+                        Ayudamos a estudiantes de escuelas y colegios
+                        con tareas, preparación para exámenes y
+                        refuerzo de inglés.
+                    </p>
+
+                    <a
+                        class="boton"
+                        href="https://wa.me/593987308319?text=Hola%2C%20Yesenia.%20Deseo%20recibir%20informaci%C3%B3n%20sobre%20las%20clases%20de%20ingl%C3%A9s."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2026 Yes, I Can! English Classes · Puyo,
+            Pastaza, Ecuador
+        </p>
+    </footer>
+
+    <script>
+        const menuBoton = document.getElementById("menuBoton");
+        const menu = document.getElementById("menu");
+        const formulario = document.getElementById("formulario");
+
+        menuBoton.addEventListener("click", function () {
+            const abierto = menu.classList.toggle("activo");
+
+            menuBoton.setAttribute(
+                "aria-expanded",
+                abierto.toString()
+            );
+        });
+
+        document.querySelectorAll("nav a").forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+                menu.classList.remove("activo");
+                menuBoton.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        formulario.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+
+            if (!formulario.checkValidity()) {
+                formulario.reportValidity();
+                return;
+            }
+
+            const nombre =
+                document.getElementById("nombre").value.trim();
+
+            const edad =
+                document.getElementById("edad").value.trim();
+
+            const institucion =
+                document.getElementById("institucion").value.trim()
+                || "No especificada";
+
+            const curso =
+                document.getElementById("curso").value.trim()
+                || "No especificado";
+
+            const representante =
+                document.getElementById("representante").value.trim();
+
+            const telefono =
+                document.getElementById("telefono").value.trim();
+
+            const servicio =
+                document.getElementById("servicio").value;
+
+            const dificultad =
+                document.getElementById("dificultad").value.trim()
+                || "No especificada";
+
+            const mensaje =
+                "Hola, Yesenia. Deseo solicitar información "
+                + "sobre las clases de inglés."
+                + "\n\nNombre del estudiante: " + nombre
+                + "\nEdad: " + edad
+                + "\nEscuela o colegio: " + institucion
+                + "\nCurso o grado: " + curso
+                + "\nRepresentante: " + representante
+                + "\nTeléfono: " + telefono
+                + "\nServicio solicitado: " + servicio
+                + "\nTema que necesita reforzar: " + dificultad
+                + "\n\nSolicitud enviada desde la página de "
+                + "Yes, I Can! English Classes.";
+
+            const numeroWhatsApp = "593987308319";
+
+            const direccion =
+                "https://wa.me/"
+                + numeroWhatsApp
+                + "?text="
+                + encodeURIComponent(mensaje);
+
+            window.open(
+                direccion,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+            formulario.reset();
+        });
+    </script>
+</body>
+</html>
